@@ -1,0 +1,284 @@
+$maincolor: rgb(241, 241, 241);
+$sccolor: rgb(33, 32, 156);
+$thcolor: rgb(253, 184, 39);
+$maincolor_text: rgb(35, 18, 11);
+
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 18px;
+	position: relative;
+	font-family: "Montserrat", sans-serif;
+	background-color: $maincolor;
+	color: $maincolor_text;
+}
+.ffblackops {
+	text-shadow: 1px 1px 1px $maincolor_text;
+	color: $maincolor;
+	font-family: "Black Ops One", "Montserrat", sans-serif;
+}
+.fc2 {
+	color: $thcolor;
+}
+.wsn {
+	word-spacing: normal;
+}
+
+.underline {
+	margin: 0 auto;
+	width: 100%;
+	height: 4px;
+	background-color: $thcolor;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+	&-small {
+		height: 2px;
+		width: 50%;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		&-contact {
+			width: 50%;
+			background-color: $sccolor;
+		}
+	}
+}
+.fxblock {
+	z-index: 5;
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	height: 40px;
+	background-color: $maincolor;
+	color: $maincolor_text;
+	&_left {
+		transform: skew(45deg);
+		bottom: 0;
+		left: -50px;
+	}
+	&_right {
+		transform: skew(45deg);
+		top: 0;
+		right: -50px;
+	}
+}
+.welcome {
+	position: relative;
+	background-image: linear-gradient(
+			rgba(32, 32, 156, 0.75),
+			rgba(32, 32, 156, 0.75)
+		),
+		url("../img/start_small.jpg");
+	background-position: center;
+	background-attachment: scroll fixed;
+	background-size: cover;
+	height: 60vh;
+	padding: 70px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	&__txt {
+		color: $maincolor;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		z-index: 2;
+		text-shadow: 3px 3px 6px &$maincolor_text;
+		padding: 10px;
+		h1 {
+			font-size: 3rem;
+		}
+	}
+	&__btn {
+		display: inline-block;
+		font-weight: 800;
+		color: &$maincolor;
+		text-decoration: none;
+		background-color: #185adb;
+		padding: 1rem 2rem;
+		width: 95%;
+		font-size: 1.1em;
+		border-radius: 10px;
+		border: 5px solid #0a1931;
+	}
+}
+
+nav {
+	z-index: 3;
+	color: $maincolor;
+	.nav__logo {
+		.mobile_number {
+			font-size: 16px;
+		}
+	}
+	.navbar-toggler {
+		color: $maincolor;
+		border: 2px solid $maincolor;
+		background-color: rgba(35, 18, 11, 0.3);
+		i {
+			font-size: 30px;
+		}
+	}
+	.nav__element {
+		text-transform: uppercase;
+		.nav-link {
+			position: relative;
+			font-size: 18px;
+			color: $maincolor;
+			padding: 10px 20px;
+			text-decoration: none;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 3px;
+				width: 100%;
+				background-color: $maincolor;
+				transform: scaleX(0);
+				transform-origin: right;
+				transition: transform 0.3s ease-in;
+			}
+
+			&:hover::after {
+				transform: scaleX(1);
+				transform-origin: left;
+			}
+		}
+	}
+}
+nav .navbar-nav .nav-link.active,
+nav .navbar-nav .show > .nav-link {
+	font-weight: bold;
+	&::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+	color: $maincolor;
+}
+#navbar {
+	transition: background 0.8s;
+}
+main {
+	color: $maincolor_text;
+}
+section {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.section1 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	img {
+		border-radius: 6px;
+		box-shadow: 5px 5px 10px #000;
+	}
+}
+
+.section2 {
+	position: relative;
+	background-image: linear-gradient(
+			rgba(32, 32, 156, 0.75),
+			rgba(32, 32, 156, 0.75)
+		),
+		url("../img/iron640.jpg");
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	color: $maincolor;
+	i {
+		font-size: 2rem;
+	}
+	.fx {
+		color: $thcolor;
+	}
+	&__offer_box {
+		margin: 20px;
+		transition: 0.2s;
+		padding: 1rem;
+		background-color: rgba(0, 0, 0, 0.2);
+		border-radius: 7px;
+		&-active {
+			transform: scale(1.1);
+		}
+		ul {
+			list-style: none;
+		}
+	}
+	&__offer_box:hover {
+		box-shadow: 1px 1px 3px $sccolor;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&__txt {
+		margin-top: 3rem;
+	}
+	.button {
+		margin: 10px 0 20px 0;
+		color: $maincolor;
+		text-decoration: none;
+		padding: 2rem 4rem;
+		font-size: 1.3em;
+		border: 3px solid $thcolor;
+		border-radius: 10px;
+		transition: 0.4s;
+		&:hover {
+			color: $maincolor_text;
+			font-weight: 700;
+			background-color: $thcolor;
+		}
+	}
+}
+.section3 {
+	margin-top: 100px;
+}
+footer {
+	position: relative;
+	background-image: linear-gradient(
+			rgba(32, 32, 156, 0.75),
+			rgba(32, 32, 156, 0.75)
+		),
+		url("../img/footer_small.jpg");
+	background-position: center;
+	background-attachment: local;
+	background-size: cover;
+	color: $maincolor;
+	a {
+		text-decoration: none;
+		color: $maincolor;
+		&:hover {
+			color: $thcolor;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.welcome {
+		background-image: linear-gradient(
+				rgba(32, 32, 156, 0.75),
+				rgba(32, 32, 156, 0.75)
+			),
+			url("../img/start_big.jpg");
+	}
+	.section2 {
+		background-image: linear-gradient(
+				rgba(32, 32, 156, 0.75),
+				rgba(32, 32, 156, 0.75)
+			),
+			url("../img/iron1920.jpg");
+	}
+	footer {
+		background-image: linear-gradient(
+				rgba(32, 32, 156, 0.75),
+				rgba(32, 32, 156, 0.75)
+			),
+			url("../img/footer_big.jpg");
+	}
+}
